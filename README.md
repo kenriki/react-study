@@ -1,3 +1,16 @@
+# 前提
+> node.jsがインストールしてあり、環境変数に設定してあること。
+
+# 使用準備
+
+> コマンドプロンプトからコマンド実行する。
+```vim
+npx create-react-app my-app
+```
+
+> 作成したmy-appのフォルダを見てみましょう
+するとsrcというフォルダがあるのでその中にあるApp.jsというファイルに注目してください。
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
