@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from 'react-router-dom'
 
-function App() {
+import Home from './pages/home/home.component'
+import Posts from './pages/posts/posts.component'
+import PostDetail from './pages/post-detail/post-detail.component'
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-adn-sign-up.component'
+
+const isAuthenticated = true;
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{`isAuthenticated: ${isAuthenticated}`}</p>
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/signin">SingIn</Link></li>
+            <li><Link to="/posts">Posts</Link></li>
+            <li><Link to="/posts/1">Posts > 1</Link></li>
+            <li><Link to="/posts/2">Posts > 2</Link></li>
+          </ul>
+
+          <hr/>
+
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/signin" render={props => isAuthenticated
+              ? (<Redirect to="/"/>)
+              : (<SignInAndSignUpPage {...props}/>)
+            }/>
+            <PrivateRoute exact path="/posts" component={Posts}/>
+            <PrivateRoute exact path="/posts/:id" component={PostDetail}/>
+          </Switch>
+        </div>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route {...rest} render={props => (isAuthenticated
+        ? <Component {...props} />
+        : <Redirect to="/signin"/>
+    )}/>
+  )
+}
+
+export default App
