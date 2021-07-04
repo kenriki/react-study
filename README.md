@@ -8,6 +8,18 @@
 npx create-react-app my-app
 ```
 
+> create-react-appコマンド後にtypescript を使いたい場合の手順
+※以下参考欄に公式ページリンク記載しました。
+
+```vim
+npm uninstall react-scripts-ts
+npm install react-scripts
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+rm tsconfig.json tsconfig.prod.json tsconfig.test.json images.d.ts
+npm start
+```
+
+
 > 作成したmy-appのフォルダを見てみましょう。
 するとsrcというフォルダがあるのでその中にあるApp.jsというファイルに注目してください。
 
@@ -288,3 +300,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # 参考
 [create-react-app が裏で何をやっているか理解する](https://qiita.com/naohikowatanabe/items/71a8bf477216ef56a5b7)
+
+[create-react-appで作ったReact SPAをあとからTypeScript対応したい時](https://qiita.com/motchi0214/items/0fce16dcec6946b19e58)
