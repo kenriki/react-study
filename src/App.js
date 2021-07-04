@@ -10,6 +10,7 @@ import { CSVLink } from "react-csv";
 
 import { Grid } from '@material-ui/core';
 import About from './components/About';
+import Header from './components/Header';
 import Home from './pages/home/home.component'
 import Posts from './pages/posts/posts.component'
 import PostDetail from './pages/post-detail/post-detail.component'
@@ -23,8 +24,7 @@ const App = () => {
       <p>{`isAuthenticated: ${isAuthenticated}`}</p>
       <Grid container direction="column">
         <Grid item>
-          {/* <Header /> */}
-          <h1>test</h1>
+          <Header />
         </Grid>
         <Grid item container>
           <Grid sm={2} />
@@ -46,11 +46,11 @@ const App = () => {
       <Router>
         <div>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/signin">SingIn</Link></li>
-            <li><Link to="/posts">Posts</Link></li>
-            <li><Link to="/posts/1">Posts > 1</Link></li>
-            <li><Link to="/posts/2">Posts > 2</Link></li>
+            <li class="btn"><Link to="/">Home</Link></li>
+            <li class="btn"><Link to="/signin">SingIn</Link></li>
+            <li class="btn"><Link to="/posts">Posts</Link></li>
+            <li class="btn"><Link to="/posts/1">Posts > 1</Link></li>
+            <li class="btn"><Link to="/posts/2">Posts > 2</Link></li>
           </ul>
 
           <hr />

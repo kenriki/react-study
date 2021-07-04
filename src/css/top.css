@@ -4,3 +4,27 @@ body {
     margin: 10px;
     background-color: rgb(236, 177, 236);
 }
+
+/**list-styleを指定する**/
+ul{    
+    list-style: none;
+}
+
+/** 見た目を整える **/
+body,ul,li{
+    margin:0px;
+    padding:0px;
+}
+
+.btn{    
+    padding:10px 30px;
+    margin:2.5px;
+
+    display:flex;
+
+    background-color: rgba(135, 206, 235,1);
+    border-radius: 5px;
+
+    text-align: center;
+    color:white;
+}

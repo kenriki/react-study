@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["esnext","dom"],
+    "outDir": "build",
+    "rootDir": "src",
+    "jsx": "react",  // .tsx ファイル内の JSX を認識
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
