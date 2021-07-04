@@ -32,7 +32,7 @@ const App = () => {
             <Router>
               <Switch>
                 <Route exact path="/">
-                  {/* <Content /> */}
+                  {/* <Content />  */}
                 </Route>
                 <Route path="/about">
                   <About />
