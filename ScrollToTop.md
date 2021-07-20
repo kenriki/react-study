@@ -21,7 +21,7 @@ class ScrollToTop extends React.Component {
 export default withRouter(ScrollToTop);
 ```
 
-このコンポーネントを、index.jsx で ReactDOM.render() してるところに以下のように設置する。
+2.このコンポーネントを、index.jsx で ReactDOM.render() してるところに以下のように設置する。
 
 index.jsx
 
@@ -38,13 +38,13 @@ ReactDOM.render(
 );
 ```
 
-これで、リンクをクリックまたは history.push() して画面遷移した時に、スクロール位置が先頭に戻る。
+3.リンクをクリックまたは history.push() して画面遷移時に、スクロール位置が先頭に戻る。
 
 この方法の場合、ブラウザで戻る／進むを行った時は、スクロール位置は維持されます。
 
 画面全体が更新されるたびに <ScrollToTop /> が一緒に更新される。
 
-なお、公式のページで最初に書かれてる以下のものは、ブラウザで戻る／進むを行った時もスクロール位置が先頭に戻る。
+4.なお、公式のページで最初に書かれてる以下のものは、ブラウザで戻る／進むを行った時もスクロール位置が先頭に戻る。
 
 Reactのバージョンが16.8以上の場合は以下が使える。
 
