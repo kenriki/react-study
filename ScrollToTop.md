@@ -2,7 +2,7 @@
 1. React Router公式のサンプル通り、以下のコンポーネントを作成する
 
 ScrollToTop.jsx
-```
+```typescript
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -24,7 +24,9 @@ export default withRouter(ScrollToTop);
 このコンポーネントを、index.jsx で ReactDOM.render() してるところに以下のように設置する。
 
 index.jsx
-```
+
+```typescript
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
@@ -47,7 +49,8 @@ ReactDOM.render(
 Reactのバージョンが16.8以上の場合は以下が使える。
 
 ScrollToTop.jsx
-```
+```typescript
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
