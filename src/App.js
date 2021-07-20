@@ -10,6 +10,7 @@ import { CSVLink } from "react-csv";
 
 import { Grid } from '@material-ui/core';
 import About from './components/About';
+import Sample from './components/Sample';
 import Header from './components/Header';
 import Home from './pages/home/home.component'
 import Posts from './pages/posts/posts.component'
@@ -26,6 +27,7 @@ const App = () => {
         <Grid item>
           <Header />
         </Grid>
+        <Sample title="サブタイトル" />
         <Grid item container>
           <Grid sm={2} />
           <Grid xs={12} sm={8}>
@@ -49,8 +51,8 @@ const App = () => {
             <li class="btn"><Link to="/">Home</Link></li>
             <li class="btn"><Link to="/signin">SingIn</Link></li>
             <li class="btn"><Link to="/posts">Posts</Link></li>
-            <li class="btn"><Link to="/posts/1">Posts > 1</Link></li>
-            <li class="btn"><Link to="/posts/2">Posts > 2</Link></li>
+            <li class="btn"><Link to="/posts/1">Posts 1</Link></li>
+            <li class="btn"><Link to="/posts/2">Posts 2</Link></li>
           </ul>
 
           <hr />
