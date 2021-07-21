@@ -8,9 +8,10 @@ import {
 } from 'react-router-dom'
 import { CSVLink } from "react-csv";
 
-import { Grid } from '@material-ui/core';
+//import { Grid } from '@material-ui/core';
 import About from './components/About';
 import Sample from './components/Sample';
+import Clear from './components/Clear';
 import Header from './components/Header';
 import Home from './pages/home/home.component'
 import Posts from './pages/posts/posts.component'
@@ -23,28 +24,19 @@ const App = () => {
   return (
     <div className="App">
       <p>{`isAuthenticated: ${isAuthenticated}`}</p>
-      <Grid container direction="column">
-        <Grid item>
-          <Header />
-        </Grid>
-        <Sample title="サブタイトル" />
-        <Grid item container>
-          <Grid sm={2} />
-          <Grid xs={12} sm={8}>
-            <Router>
-              <Switch>
-                <Route exact path="/">
-                  {/* <Content />  */}
-                </Route>
-                <Route path="/about">
-                  <About />
-                </Route>
-              </Switch>
-            </Router>
-          </Grid>
-          <Grid sm={2} />
-        </Grid>
-      </Grid>
+      <Header />
+      <Sample title="サブタイトル★" />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            {/* <Content />  */}
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </Router>
+      
       <Router>
         <div>
           <ul>
@@ -54,7 +46,7 @@ const App = () => {
             <li class="btn"><Link to="/posts/1">Posts 1</Link></li>
             <li class="btn"><Link to="/posts/2">Posts 2</Link></li>
           </ul>
-
+          <Clear />
           <hr />
 
           <Switch>

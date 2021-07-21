@@ -19,12 +19,11 @@ body,ul,li{
 .btn{    
     padding:10px 30px;
     margin:2.5px;
-
     display:flex;
-
     background-color: rgba(135, 206, 235,1);
     border-radius: 5px;
-
     text-align: center;
     color:white;
+    width: 20%;
+    float: left;
 }
