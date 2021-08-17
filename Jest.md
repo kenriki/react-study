@@ -1,5 +1,18 @@
 
 # メモ
+
+> 与えられた props に対してコンポーネントが正しくレンダーされているかをテストする
+
+## ポイント
+```typescript
+
+act(() => {
+    render(<Hello />, container);
+  });
+expect(container.textContent).toBe("Hey, stranger");
+
+```
+
 ```typescript
 
 // hello.js
