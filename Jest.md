@@ -1,9 +1,38 @@
 
 # コンポーネントのテストのメモ
 
+## セットアップと後始末
+
+> それぞれのテストにおいて、通常われわれは React ツリーを document に結びついた DOM 要素として描画することになります。これは DOM イベントを受け取れるようにするために重要です。テストが終了した際に「クリーンアップ」を行い、document からツリーをアンマウントします。
+このためによく行うのは beforeEach と afterEach ブロックのペアを使い、それらを常に実行することで、各テストの副作用がそれ自身にとどまるようにすることです。
+
+> 仮にテストが失敗した場合でもクリーンアップコードを実行するようにする
+
+```typescript
+
+import { unmountComponentAtNode } from "react-dom";
+
+let container = null;
+beforeEach(() => {
+  // setup a DOM element as a render target
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // cleanup on exiting
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+```
+
+## act()
+
 > 与えられた props に対してコンポーネントが正しくレンダーされているかをテストする
 
-## ポイント
+### ポイント
 ```typescript
 
 act(() => {
@@ -15,7 +44,7 @@ expect(container.textContent).toBe("Hey, stranger");
 
 ```
 
-## テスト対象ファイル
+### テスト対象ファイル
 
 ```typescript
 
@@ -32,7 +61,7 @@ export default function Hello(props) {
 }
 ```
 
-## テスト構成ファイル
+### テスト構成ファイル
 
 ```typescript
 // hello.test.js
