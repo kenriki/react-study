@@ -7,8 +7,10 @@
 ```typescript
 
 act(() => {
+    // render components
     render(<Hello />, container);
   });
+// make assertions
 expect(container.textContent).toBe("Hey, stranger");
 
 ```
