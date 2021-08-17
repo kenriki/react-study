@@ -8,6 +8,8 @@
 
 > 仮にテストが失敗した場合でもクリーンアップコードを実行するようにする
 
+### ポイント
+
 ```typescript
 
 import { unmountComponentAtNode } from "react-dom";
