@@ -13,6 +13,8 @@ expect(container.textContent).toBe("Hey, stranger");
 
 ```
 
+## テスト対象ファイル
+
 ```typescript
 
 // hello.js
@@ -28,6 +30,7 @@ export default function Hello(props) {
 }
 ```
 
+## テスト構成ファイル
 
 ```typescript
 // hello.test.js
