@@ -109,3 +109,4 @@ it("renders with or without a name", () => {
 
 # 参考
 [https://ja.reactjs.org/docs/testing-recipes.html](https://ja.reactjs.org/docs/testing-recipes.html)
+[https://qiita.com/chimame/items/e97883fd46b67529d59f](https://qiita.com/chimame/items/e97883fd46b67529d59f)
